@@ -1,0 +1,20 @@
+package practise;
+
+public class aa 
+{
+	private int ans;
+	public void setAns(int ans)
+	{
+		this.ans=ans;
+	}
+	public int getAns()
+	{
+		return ans;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return ans+"";
+	}
+}

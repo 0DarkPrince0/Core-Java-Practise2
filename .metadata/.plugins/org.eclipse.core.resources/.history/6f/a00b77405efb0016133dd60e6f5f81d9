@@ -1,0 +1,24 @@
+package str;
+import java.util.Scanner;
+public class Count {
+
+	
+	public static void main(String[] args) {
+	
+		char line[]=new char[80];
+		int i=0;
+		int character=0, digit=0,special=0;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter the line");
+		for(i=0;i<line.length;i++)
+		{
+			char c=scan.next().charAt(0);
+			line[i]=c;
+		}
+		for(i=0;i<line.length;i++)
+		{
+			System.out.print(line[i]);
+		}
+	}
+
+}

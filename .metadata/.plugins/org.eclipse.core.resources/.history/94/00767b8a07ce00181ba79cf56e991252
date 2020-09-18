@@ -1,0 +1,48 @@
+package practise;
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.Iterator;
+public class LL 
+{
+	private LinkedList<Integer> a;
+	private static Scanner scan;
+	public LL()
+	{
+		a=new LinkedList<Integer>();
+	}
+	static
+	{
+		scan=new Scanner(System.in);
+	}
+	
+	
+	
+	public static void main(String[] args) 
+	{
+		LL l=new LL();
+		while(true)
+		{
+		System.out.println("Enter element");
+		int number;
+		number=scan.nextInt();
+		l.a.add(number);
+		System.out.println("Do you want to add more numbers");
+		System.out.println("If Yes please enter y other wise press any key");
+		char ch=scan.next().charAt(0);
+		if(!(ch=='Y' || ch=='y'))
+		{
+			break;
+		}
+		}
+		Iterator<Integer> itr=l.a.iterator();
+		
+		while(itr.hasNext())
+		{
+			
+			System.out.println(itr.next());
+		}
+		
+		
+	}
+
+}

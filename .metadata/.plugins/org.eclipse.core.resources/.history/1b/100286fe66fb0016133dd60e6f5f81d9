@@ -1,0 +1,41 @@
+package str;
+import java.util.Scanner;
+public class Count {
+
+	
+	public static void main(String[] args) {
+	
+		String s;
+		char ch[];
+		int i=0;
+		int letter=0, digit=0,special=0,whitespace=0;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter the line");
+		s=scan.nextLine();
+		ch=s.toCharArray();
+		for( i=0;i<ch.length;i++)
+		{
+			if(Character.isDigit(i))
+			{
+				digit++;
+			}
+			else if(Character.isWhitespace(i))
+			{
+				whitespace++;
+			}
+			else if(Character.isLetter(i))
+			{
+				letter++;
+			}
+			else
+			{
+				special++;
+			}
+			System.out.println("Digits "+digit);
+			System.out.println("Whitlespace "+whitespace);
+			System.out.println("Letters "+letter);
+			System.out.println("Special Character "+special);
+		}
+	}
+
+}

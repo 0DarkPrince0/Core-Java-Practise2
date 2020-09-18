@@ -1,0 +1,27 @@
+package WORK;
+import java.util.Scanner;
+public class Series1 
+{
+
+	
+	public static void main(String[] args) 
+	{
+		int number,i;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter Series Length");
+		number=scan.nextInt();
+		for(i=0;i<number;i++)
+		{
+			if(i%2==0)
+			{
+				System.out.println("-"+i);
+			}
+			else
+			{
+				System.out.println("+"+i);
+			}
+		}
+		
+	}
+
+}

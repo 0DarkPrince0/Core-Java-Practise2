@@ -1,0 +1,168 @@
+package assignment_3;
+
+import java.util.Scanner;
+import java.util.LinkedList;
+import java.util.Iterator;
+public class Quiz
+	{
+		int i=0;
+		private LinkedList<AddQuestions>question;
+	
+		private static Scanner scan;
+		static
+		{
+			scan=new Scanner(System.in);
+		}
+		
+		Quiz()
+		{
+			question=new LinkedList<AddQuestions>();
+		}
+		
+		public void addQuestion()
+		{			
+					scan.nextLine();
+					AddQuestions addQuestion=new AddQuestions();
+					String question;
+					String option;
+					int option_count=1;
+					System.out.println("Enter your Question: ");
+					question=scan.nextLine();
+					addQuestion.setQuestion(question);
+					
+					while(true)
+					{
+						AddOption addOption=new AddOption();
+						System.out.println("Enter Options: ");
+						System.out.println("Enter Option "+option_count);
+						option=scan.nextLine();
+						addOption.setOption(option);
+						addQuestion.getOption().add(addOption);
+						char ch=scan.next().charAt(0);
+						if(!(ch=='y')|| (ch=='Y'))
+						{
+							break;
+						}
+						
+					}
+					
+		}
+		
+	
+		public void play()
+		{
+			Iterator<AddQuestions> itr=question.iterator();
+			while(itr.hasNext())
+			{
+				AddQuestions a=(AddQuestions) itr.next();
+				System.out.println(a.getId()+" "+a.getQuestion());	
+				Iterator<AddOption> opt_itr=a.getOption().iterator();
+				System.out.println("Options are: ");
+				while(opt_itr.hasNext())
+				{
+					AddOption ao=(AddOption) opt_itr.next();
+					System.out.println(ao.getOption());
+				}
+			}
+		}
+	
+	
+	
+		
+		
+		
+
+		
+		/*		LinkedList<AddQuestions> l=new LinkedList<AddQuestions>();
+				AddQuestions q=new AddQuestions();
+				AddOption o=new AddOption();
+				q.setId(1);
+				q.setQuestion("What is your name");
+				o.addOption1("Nagma");
+				o.addOption2("Sonali");
+				o.addOption3("Imra");
+				o.addOption4("Tina");
+				q.setOption(o);
+				
+				l.add(q);
+				
+				AddQuestions q1=new AddQuestions();
+				AddOption o1=new AddOption();
+				q1.setId(1);
+				q1.setQuestion("What is your age");
+				o1.addOption1("10");
+				o1.addOption2("25");
+				o1.addOption3("35");
+				o1.addOption4("20");
+				q1.setOption(o1);
+				l.add(q1);
+				Iterator<AddQuestions> itr=l.iterator();
+				while(itr.hasNext())
+				{
+					AddQuestions a=(AddQuestions) itr.next();
+					System.out.println(a.getId()+" "+a.getQuestion()+" "+a.getOption());
+				}
+				*/	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	public static void main(String[] args)
+	{
+		Quiz q=new Quiz();
+		System.out.println("Welcome in the gaming world:");
+		int choice;
+		
+		
+		while(true)
+			{
+				System.out.println("Enter Your Choice:");
+				System.out.println("1. for Add quesitons:");
+				System.out.println("2. for Play the Quiz:");
+				System.out.println("3. for Quit the Game:");
+				choice=scan.nextInt();
+				
+				switch(choice)
+				{
+				case 1:
+					q.addQuestion();
+					break;
+					
+				case 2:
+					q.play();
+					break;
+					
+				case 3:
+					System.exit(0);
+					
+					
+				default:
+					System.out.println("Wrong choice");
+				}
+				
+			
+					
+				
+				
+			}
+		
+		}
+	
+	}
